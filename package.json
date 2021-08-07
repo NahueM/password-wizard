@@ -3,15 +3,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "latest",
+    "next-google-fonts": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^10.2.6",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }
