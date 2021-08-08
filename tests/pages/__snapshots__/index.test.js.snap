@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home test Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="text-secondary"
+  >
+    <header
+      class="sticky top-0 z-50  bg-white  shadow-md p-5  md:px-10"
+    >
+      <div
+        class="max-w-6xl mx-auto px-8 grid grid-cols-2"
+      >
+        <div
+          class="relative flex items-center h-10 cursor-pointer my-auto"
+        >
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="logo"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: left;"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center font-quicksand justify-end"
+        >
+          <h1
+            class="font-quicksand text-secondary text-2xl md:text-3xl"
+          >
+            Password Wizard
+          </h1>
+        </div>
+      </div>
+    </header>
+    <div
+      class="relative h-[200px] sm:h-[300px] lg:h-[400px]  xl:[500px] 2xl:[600px]"
+    >
+      <div
+        style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+      >
+        <noscript />
+        <img
+          alt="banner"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+        />
+      </div>
+      <div
+        class="absolute bg-secondary bg-opacity-50 text-white p-3 top-0 m-5 h-20 md:m-10 "
+      >
+        <h2
+          class="text-lg font-bold md:text-2xl"
+        >
+          Welcome to 
+          <span
+            class="text-primary ml-2"
+          >
+            Current account OpenClose
+          </span>
+        </h2>
+        <p
+          class="text-sm md:text-lg"
+        >
+           We will guide you, through the process of setting your password
+        </p>
+      </div>
+    </div>
+    <main
+      class="max-w-6xl mx-auto px-8 sm:px-16"
+    >
+      <section
+        class="pt-8"
+      >
+        <h3
+          class="text-4xl font-semibold pb-5"
+        >
+          Just a few steps
+        </h3>
+        <p>
+          For this process we will need
+        </p>
+        <ul
+          class="list-disc m-5"
+        >
+          <li>
+            Name
+          </li>
+          <li>
+            Last name
+          </li>
+          <li>
+            Valid e-mail account
+          </li>
+        </ul>
+      </section>
+      <section
+        class="pt-8"
+      >
+        <span
+          class="text-sm"
+        >
+          Confirm that you are over 18 years old
+        </span>
+        <label
+          class="ml-5 text-secondary font-bold"
+        >
+          <input
+            class="mr-2 leading-tight"
+            type="checkbox"
+          />
+        </label>
+      </section>
+    </main>
+  </div>
+</DocumentFragment>
+`;
