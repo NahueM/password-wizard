@@ -16,10 +16,11 @@ export function checkIsValidPassword(errors){
     }
 }
 
-export function checkAreSamePassword (confirmErrMsg, firstPassword, secondPassword, setAreSamePassword) {
+export function checkAreSamePassword (confirmErrMsg, form, setAreSamePassword) {
+    const{password, confirmPassword} = form
     let error = {...confirmErrMsg}
-    if(Object.is(firstPassword, secondPassword)){
-         setAreSamePassword(true)
+    if(Object.is(password, confirmPassword)){
+        setAreSamePassword(true)
         return error = {...error, samePassword:{...error.samePassword, status:true}}
     }
      setAreSamePassword(false)

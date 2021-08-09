@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import uniqid from 'uniqid';
+import {CheckIcon, XIcon} from '@heroicons/react/solid'
 
 function Input({type, label= undefined, onChange, placeHolder, id, classname, value, errMsg={}}) {
 
@@ -30,9 +31,12 @@ function Input({type, label= undefined, onChange, placeHolder, id, classname, va
                         Object.keys(errMsg)
                         .map(err => 
                         <div 
-                            className={`text-xs ${errMsg[err]['status'] ? 'text-green-500' : 'text-red-500' }`} 
-                            key={uniqid()}>{errMsg[err]['msg']}
-                        </div>)
+                            className={`text-xs flex space-x-4 ${errMsg[err]['status'] ? 'text-green-500' : 'text-red-500' }`} 
+                            key={uniqid()}
+                        >
+                            {errMsg[err]['msg']}{errMsg[err]['status'] && <CheckIcon className='h-4'/>}
+                        </div>
+                        )
                     }
                 </div>
             }
@@ -41,3 +45,6 @@ function Input({type, label= undefined, onChange, placeHolder, id, classname, va
 }
 
 export default Input
+
+
+/* ${errMsg[err]['status'] ? <XIcon className='h-5'> : <CheckIcon className='h-5'/>} */

@@ -1,11 +1,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Input from './Input'
 import Button from './Button'
 import {UseWizardContext} from '../hooks/useWizardContext'
 import {checkPassword, checkAreSamePassword} from '../utils/formHelper'
 import {passwordErr, confirmPasswordErr} from '../constants/errMsg'
+import {submitForm} from '../pages/api/psswAPI'
 
 function NewPasswordForm() {
     const [state, dispatch] = UseWizardContext();
@@ -16,18 +18,27 @@ function NewPasswordForm() {
     const [isValidPassword, setIsValidPassword] = useState(false)
     const [areSamePassword, setAreSamePassword] = useState(false)
 
+    const Router = useRouter()
+
     
-    const handleChange = ({id, value}) => {
-        setFormValues(prev => ({...prev, [id] : value}))
+    const handleInputChange = ({id, value}) => {
+        const actualFormValues = {...formValues, [id] : value}
+        setFormValues(actualFormValues)
         if(id === 'password'){
             setErrMsg(checkPassword(errMsg, value, setIsValidPassword))
         }
-        setConfirmErrMsg(checkAreSamePassword(confirmErrMsg, formValues.password, value, setAreSamePassword))
+        if(actualFormValues.confirmPassword !== ''){
+            setConfirmErrMsg(checkAreSamePassword(confirmErrMsg, actualFormValues, setAreSamePassword))
+        }
     }
     
-    const handleSubmit = (e) =>{
-        console.log("🚀 ~ file: formPage.js ~ line 12 ~ formPage ~ formValues", formValues)
-
+    const handleNextButtonClick = async (e) =>{
+        dispatch({ type: 'SET_REQUEST_STATUS', status:'loading' });
+        const res = await submitForm(formValues.password)
+            .then(response => response)
+            .catch(e => e)
+        dispatch({ type: 'SET_REQUEST_STATUS', status:'ok' });
+        Router.push(`/feedBackPage/?requestStatus=${res.status}`)
     }
     return (
         <section className='pt-8'>
@@ -39,9 +50,9 @@ function NewPasswordForm() {
                                 classname='mb-4' 
                                 label='New password' 
                                 id='password'  
-                                placeHolder='Min 8 - Max 24 - at least 1 number & 1 upperCase'
+                                placeHolder='New Password'
                                 value={form?.password}
-                                onChange={handleChange}
+                                onChange={handleInputChange}
                                 errMsg={errMsg}
                             />
                             <Input 
@@ -50,7 +61,7 @@ function NewPasswordForm() {
                                 id='confirmPassword'  
                                 placeHolder='Confirm'
                                 value={form?.confirmPassword}
-                                onChange={handleChange}
+                                onChange={handleInputChange}
                                 errMsg={confirmErrMsg}
                             />
                         </div>       
@@ -60,23 +71,22 @@ function NewPasswordForm() {
                             id='phrase' 
                             placeHolder='Will help you remember password'
                             value={form?.phrase}
-                            onChange={handleChange}
+                            onChange={handleInputChange}
                         />
-                        <div className='flex flex-row pt-5 space-x-4 md:justify-around'>
-                            <Link href="/" passHref>
-                                <Button 
-                                    type='button' 
-                                    isDisabled={false} 
-                                    text='Back'
-                                />
-                            </Link>
-                            <Link href="/feedBackPage" passHref>
+                        <div className='flex flex-row w-full pt-5 space-x-4 md:justify-between'>
+                                <Link href="/" passHref>
+                                    <Button 
+                                        type='button' 
+                                        isDisabled={false} 
+                                        text='Back'
+                                    />
+                                </Link>
                                 <Button 
                                     type='button' 
                                     isDisabled={!isValidPassword || !areSamePassword} 
                                     text='Next'
+                                    onClick={handleNextButtonClick}
                                 />
-                            </Link>
                         </div>
                     </form>
                 </section>

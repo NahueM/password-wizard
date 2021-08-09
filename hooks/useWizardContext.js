@@ -8,15 +8,16 @@ const initState = {
         phrase: '',
     },
     lang:'en',
-    isOverAgeChecked:false
+    isOverAgeChecked:false,
+    loadingPage:'ok'
 };
 
 function wizardReducer(state, action) {
     switch (action.type) {
-        case 'ADD_PHRASE': {
+        case 'SET_FORM_INFO': {
             return {
                 ...state,
-                form: {phrase: action.phrase},
+                form: {...action.form},
             };
         }
         case 'CHANGE_OVER_AGE_CHECK_STATUS':{
@@ -30,6 +31,17 @@ function wizardReducer(state, action) {
                 ...state,
                 lang: action.lang,
             };
+        }
+        case 'SET_REQUEST_STATUS':{
+            return{
+                ...state,
+                loadingPage: action.status
+            }
+        }
+        case 'RESET_STATE': {
+            return{
+                state : initState
+            }
         }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`);

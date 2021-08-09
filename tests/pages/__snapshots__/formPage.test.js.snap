@@ -129,19 +129,19 @@ exports[`Should match snapshot 1`] = `
             />
           </div>
           <div
-            class="flex flex-row pt-5 space-x-4 md:justify-between"
+            class="flex flex-row pt-5 space-x-4 md:justify-around"
           >
             <button
-              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-52 text-lg "
               href="/"
               type="button"
             >
               Back
             </button>
             <button
-              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-52 text-lg "
               disabled=""
-              href="/feedBackPage"
+              href="/feedBackPage?pssw="
               type="button"
             >
               Next

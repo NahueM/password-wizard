@@ -9,6 +9,7 @@
     "test:coverage": "jest --coverage --watchAll"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.3",
     "next": "latest",
     "next-google-fonts": "^2.2.0",
     "react": "^17.0.2",

@@ -120,7 +120,7 @@ exports[`Home test Should match snapshot 1`] = `
           class="flex justify-end m-5"
         >
           <button
-            class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+            class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-52 text-lg "
             disabled=""
             href="/formPage"
             type="button"
