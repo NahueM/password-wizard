@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="text-secondary"
+  >
+    <header
+      class="sticky top-0 z-50  bg-white  shadow-md p-5  md:px-10"
+    >
+      <div
+        class="max-w-6xl mx-auto px-8 grid grid-cols-2"
+      >
+        <div
+          class="relative flex items-center h-10 cursor-pointer my-auto"
+        >
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="logo"
+              decoding="async"
+              href="/"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: left;"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center font-quicksand justify-end"
+        >
+          <h1
+            class="font-quicksand text-secondary text-2xl md:text-3xl"
+          >
+            Password Wizard
+          </h1>
+        </div>
+      </div>
+    </header>
+    <main
+      class="max-w-6xl mx-auto px-8 sm:px-16"
+    >
+      <section
+        class="pt-8"
+      >
+        <h1
+          class="text-primary text-2xl font-semibold mb-8"
+        >
+          Create New Password
+        </h1>
+        <form
+          class="flex flex-col p-5 border border-secondaryGrey"
+        >
+          <div
+            class="flex flex-col lg:flex-row justify-between content-center pb-4"
+          >
+            <div
+              class="flex flex-col space-y-2 w-full mb-4 lg:w-5/12"
+            >
+              <label>
+                New password
+              </label>
+              <input
+                class="border border-secondary p-2 w-full"
+                id="password"
+                placeholder="Min 8 - Max 24 - at least 1 number & 1 upperCase"
+                type="password"
+                value=""
+              />
+              <div
+                class="space-y-2 bg-gray-200 p-3"
+                data-testid="password"
+              >
+                <div
+                  class="text-xs text-red-500"
+                >
+                  Min 8 characters
+                </div>
+                <div
+                  class="text-xs text-red-500"
+                >
+                  At least 1 symbol
+                </div>
+                <div
+                  class="text-xs text-red-500"
+                >
+                  At least 1 capital letter
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col space-y-2 w-full undefined lg:w-5/12"
+            >
+              <label>
+                Confirm your password
+              </label>
+              <input
+                class="border border-secondary p-2 w-full"
+                id="confirmPassword"
+                placeholder="Confirm"
+                type="password"
+                value=""
+              />
+              <div
+                class="space-y-2 bg-gray-200 p-3"
+                data-testid="confirmPassword"
+              >
+                <div
+                  class="text-xs text-red-500"
+                >
+                  Same password
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-2 w-full undefined lg:w-5/12"
+          >
+            <label>
+              Phrase hint
+            </label>
+            <input
+              class="border border-secondary p-2 w-full"
+              id="phrase"
+              placeholder="Will help you remember password"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="flex flex-row pt-5 space-x-4 md:justify-between"
+          >
+            <button
+              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+              href="/"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+              disabled=""
+              href="/feedBackPage"
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</DocumentFragment>
+`;

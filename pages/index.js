@@ -1,15 +1,15 @@
-import { useState } from 'react';
 import Layout from '../components/Layout';
+import Link from 'next/link'
+import {UseWizardContext} from '../hooks/useWizardContext'
+import Button from '../components/Button'
+
 
 export default function Home() {
-  const[isUnderAge, setIsUnderAge] = useState (true)
-
-  const handleButtonClick= () => {
-    
-  }
+  const [state, dispatch] = UseWizardContext();
+  const {isOverAgeChecked} = state
   
   return (
-        <Layout>
+        <Layout page='home'>
           <section className="pt-8">
             <h3 className="text-4xl font-semibold pb-5">Just a few steps</h3>
             <p>For this process we will need</p>
@@ -24,18 +24,17 @@ export default function Home() {
               Confirm that you are over 18 years old
             </span>
             <label className="ml-5 text-secondary font-bold">
-              <input className="mr-2 leading-tight" type="checkbox" onChange={() => setIsUnderAge(prev => !prev)}/>
+              <input 
+              className="mr-2 leading-tight" 
+              checked={isOverAgeChecked} 
+              type="checkbox" 
+              onChange={() =>  dispatch({ type: 'CHANGE_OVER_AGE_CHECK_STATUS', status: !isOverAgeChecked })}/>
             </label>
-            {
-              !isUnderAge &&
-              <div className='flex justify-end m-5'>
-                <button type="submit" disabled={isUnderAge} onClick={handleButtonClick} className="w-full py-2 px-4 border 
-                border-transparent shadow-sm font-medium rounded-md text-white 
-                bg-primary hover:bg-red-700 sm:w-40 md:w-48 text-lg ">
-                  Next
-                </button>
-              </div>
-            }
+            <div className='flex justify-end m-5'>
+              <Link href="/formPage" passHref>
+                <Button type='button' isDisabled={!isOverAgeChecked} text='Next'/>
+              </Link>
+            </div>
           </section>
         </Layout>
   )

@@ -21,6 +21,7 @@ exports[`Home test Should match snapshot 1`] = `
             <img
               alt="logo"
               decoding="async"
+              href="/"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: left;"
             />
@@ -115,6 +116,18 @@ exports[`Home test Should match snapshot 1`] = `
             type="checkbox"
           />
         </label>
+        <div
+          class="flex justify-end m-5"
+        >
+          <button
+            class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-48 text-lg "
+            disabled=""
+            href="/formPage"
+            type="button"
+          >
+            Next
+          </button>
+        </div>
       </section>
     </main>
   </div>

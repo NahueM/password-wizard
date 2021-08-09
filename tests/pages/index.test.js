@@ -1,6 +1,7 @@
-
-
-import { render, screen } from "@testing-library/react";
+/**
+ * @jest-environment jsdom
+ */
+import {render, screen} from '../../utils/test-utils'
 import userEvent from '@testing-library/user-event';
 import Home from "../../pages/index";
 
@@ -21,15 +22,4 @@ describe("Home test", () => {
     userEvent.click(screen.getByRole('checkbox'))
     expect(screen.queryByRole('button', { name: /next/i })).toBeInTheDocument
   });
-
-  test("after click on checkBox button should appear", () => {
-    render(<Home />);
-    userEvent.click(screen.getByRole('checkbox'))
-    userEvent.click(screen.queryByRole('button', { name: /next/i }))
-  });
 });
-
-
-
-/* 
-const handleSubmit = jest.fn() */

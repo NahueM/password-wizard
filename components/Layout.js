@@ -3,7 +3,7 @@ import Header from './Header'
 import Banner from './Banner'
 
 
-function Layout({children}) {
+function Layout({children, page}) {
     return (
         <div className="text-secondary">
             <Head>
@@ -11,7 +11,9 @@ function Layout({children}) {
             <link rel="icon" href="/favicon.ico" />
             </Head> 
             <Header />
-            <Banner />
+            {
+                page === 'home' &&  <Banner />
+            }
             <main className="max-w-6xl mx-auto px-8 sm:px-16">
                 {children}
             </main>
