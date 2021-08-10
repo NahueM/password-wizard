@@ -1,11 +1,11 @@
 # First steps
 
-download the project http://localhost:3000
+download the project
 npm run i
 
 ## scripts
 
-npm run dev --> runs project on
+npm run dev --> runs project on http://localhost:3000
 npm run test --> runs tests
 npm run lint --> checks for lint errors
 
