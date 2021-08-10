@@ -1,13 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {UseWizardContext} from '../hooks/useWizardContext'
 import useLocalizedMessages from '../hooks/useLocalizedMessages'
 
-
 function Header() {
-    const [state, dispatch] = UseWizardContext();
-    const {lang} = state
-
     const localize = useLocalizedMessages();
 
     return (
@@ -25,8 +20,8 @@ function Header() {
                         />
                     </Link>
                 </div>
-                <div className="flex items-center justify-end">
-                    <h1 className="text-lg text-secondary md:text-3xl inline">{localize(`passwordWizard`)}</h1>
+                <div className="flex items-center justify-end pl-4">
+                    <h1 className="text-secondary sm:text-xl md:text-2xl inline">{localize(`passwordWizard`)}</h1>
                 </div>
             </div>
         </header>

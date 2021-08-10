@@ -14,9 +14,9 @@ function Banner() {
                 objectFit="cover"
                 alt='banner'
             />
-            <div className='absolute bg-secondary bg-opacity-50 text-white p-3 top-0 m-5 h-20 md:m-10 '>
-                <h2 className='text-lg font-bold md:text-2xl'>
-                {localize(`welcomeTo`)}<span className='text-primary ml-2'>{localize(`currentAccount`)}</span>
+            <div className='absolute mt-10 bg-secondary bg-opacity-50 text-white p-3 top-0 m-5 h-30 md:m-10 '>
+                <h2 className='text font-bold md:text-2xl'>
+                    {localize(`welcomeTo`)}<span className='text-primary ml-2'>{localize(`currentAccount`)}</span>
                 </h2>
                 <p className='text-sm md:text-lg'>{localize(`willGuideYou`)}</p>
             </div>
