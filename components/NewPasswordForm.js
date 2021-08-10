@@ -40,8 +40,9 @@ function NewPasswordForm() {
         const res = await submitForm(formValues.password)
             .then(response => response)
             .catch(e => e)
-        Router.push(`/FeedBackPage/?requestStatus=${res.status}`)
+        Router.push({ pathname: '/FeedBackPage', query:{requestStatus: res.status }})
     }
+    
     return (
         <section className='pt-8'>
                     <h1 className='text-primary text-2xl font-semibold mb-8'>{localize(`createNewPassword`)}</h1>
