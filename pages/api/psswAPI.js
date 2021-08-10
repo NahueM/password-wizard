@@ -10,7 +10,7 @@ const submitForm = (pass, repass, optionalQuestion) =>
 			pass !== PRUEBA_KO
 			? resolve(RESPONSE_OK)
 			: reject(RESPONSE_KO)
-		, 3000)
+		, 2500)
 )
 
 export {

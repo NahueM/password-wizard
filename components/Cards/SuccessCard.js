@@ -13,10 +13,10 @@ function SuccessCard() {
         dispatch({ type: 'RESET_STATE' });
     }
     return (
-        <div className='flex flex-col m-10 border-b-2 border-gray-300 border-solid shadow-md'>
+        <div className='flex flex-col w-screen m-10 border-b-2 border-gray-300 border-solid shadow-md md:w-5/12'>
             <div className='flex p-5 border-b border-gray-300 border-solid space-x-4 items-center'>
                 <CheckCircleIcon className='h-10 text-green-500'/>
-                <div className=''>
+                <div>
                     <h1 className='font-semibold text-base md:text-xl'>
                         {localize('successPassword')}
                     </h1>

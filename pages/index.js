@@ -11,9 +11,9 @@ export default function Home() {
 
   const localize = useLocalizedMessages();
 
-  
+  const pageName = 'home'
   return (
-        <Layout page='home'>
+        <Layout page={pageName}>
           <section className="pt-8">
             <h3 className="text-4xl font-semibold pb-5">{localize(`justFewSteps`)}</h3>
             <p>{localize(`need`)}</p>

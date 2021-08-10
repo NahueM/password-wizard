@@ -2,12 +2,18 @@ import {useState} from 'react'
 import uniqid from 'uniqid';
 import {CheckIcon} from '@heroicons/react/solid'
 import useLocalizedMessages from '../hooks/useLocalizedMessages'
+import {EyeIcon, EyeOffIcon} from '@heroicons/react/solid'
 
 
 function Input({type, label= undefined, onChange, placeHolder, id, classname, value, errMsg={}}) {
-    const [inputValue, setInputValue] = useState(value)   
+    const [inputValue, setInputValue] = useState(value)
+    const[isVisible, setIsVisible] = useState(false)   
 
     const localize = useLocalizedMessages();
+
+    const toggleVisible = () =>{
+        setIsVisible(prev => !prev)
+    }
     
     const handleChange= (e) => {
         setInputValue(e.target.value)
@@ -19,14 +25,24 @@ function Input({type, label= undefined, onChange, placeHolder, id, classname, va
                 label !== undefined &&
                 <label>{label}</label>
             }
-            <input 
-                className='border border-secondary p-2 w-full'
-                id={id} 
-                type={type}
-                placeholder={placeHolder}    
-                value={inputValue}
-                onChange={handleChange}
-            />  
+            <div className='flex border-secondary items-center border '>
+                <input 
+                    className=' outline-none p-2 w-full'
+                    id={id} 
+                    type={isVisible ? 'text': type}
+                    placeholder={placeHolder}    
+                    value={inputValue}
+                    onChange={handleChange}
+                />  
+                {
+                    type === 'password' && isVisible 
+                    && <EyeIcon onClick={toggleVisible} className='h-5 mr-4'/> 
+                }
+                {
+                    type === 'password' && !isVisible
+                    && <EyeOffIcon onClick={toggleVisible} className='h-5 mr-4'/>
+                }
+            </div>
             {  
                 !!Object.keys(errMsg).length &&
                 <div className='space-y-2 bg-gray-200 p-3' data-testid={id}>

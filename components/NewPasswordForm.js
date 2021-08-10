@@ -40,8 +40,7 @@ function NewPasswordForm() {
         const res = await submitForm(formValues.password)
             .then(response => response)
             .catch(e => e)
-        dispatch({ type: 'SET_REQUEST_STATUS', status:'ok' });
-        Router.push(`/feedBackPage/?requestStatus=${res.status}`)
+        Router.push(`/FeedBackPage/?requestStatus=${res.status}`)
     }
     return (
         <section className='pt-8'>

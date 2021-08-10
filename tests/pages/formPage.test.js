@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
- import {render, screen} from '../../utils/test-utils'
+ import {render, screen, waitForElementToBeRemoved} from '../../utils/test-utils'
  import userEvent from '@testing-library/user-event';
  import FormPage from "../../pages/formPage";
 
@@ -81,7 +81,7 @@ test("typing diferent password 'Same password' should stay red and button disabl
     expect(screen.getByRole('button', {  name: /next/i})).toHaveAttribute('disabled')
 }); 
 
-test("typing same password 'Same password' should change to green and button should be enable", () => {
+test("typing same password 'Same password' should change to green and button should be enable", async () => {
     render(<FormPage />);
     expect(screen.getByText(/same password/i)).toHaveClass('text-red-500')
     
@@ -90,4 +90,5 @@ test("typing same password 'Same password' should change to green and button sho
 
     expect(screen.getByText(/same password/i)).toHaveClass('text-green-500')
     expect(screen.getByRole('button', {  name: /next/i})).not.toHaveAttribute('disabled')
+    userEvent.click(screen.getByRole('button', {  name: /next/i}))
 }); 
