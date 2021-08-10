@@ -1,5 +1,4 @@
 import Layout from '../components/Layout'
-import Input from '../components/Input'
 import NewPasswordForm from '../components/NewPasswordForm'
 
 const pageName = 'formPage'

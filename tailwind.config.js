@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend:{
+      fontFamily: {
+        'primary': ['"Quicksand"', 'sans-serif']
+      },
       colors:{
             primary: '#FF0049',
             secondary: '#002B45',
@@ -22,7 +25,4 @@ module.exports = {
       backgroundColor: ['checked'],
     }
   },
-  plugins: [
-    require('@tailwindcss/custom-forms'),
-  ]
 }

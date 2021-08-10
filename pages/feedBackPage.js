@@ -14,7 +14,7 @@ function FeedBackPage({response}) {
        return () => {
         componentMounted = false;
        }
-   }, []) 
+   }, [dispatch]) 
 
     return (
         <div className='flex justify-center w-full'>

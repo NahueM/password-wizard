@@ -20,7 +20,7 @@ export const en = {
     minEigth:'Min 8 characters',
     atLeastOneSymbol: "At least 1 symbol",
     atLeastOneCapital: "At least 1 capital letter",
-    samePassword: "Same password",
+    samePassword: "Repeat password",
     checkingData: "Checking data",
     successPassword:"¡Your Password was successfully created!",
     logIn: "Log In",
