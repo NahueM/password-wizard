@@ -3,11 +3,17 @@ import Header from './Header'
 import Banner from './Banner'
 import Loading from './Loading'
 import {UseWizardContext} from '../hooks/useWizardContext'
+import useLocalizedMessages from '../hooks/useLocalizedMessages'
+
 
 
 function Layout({children, page}) {
     const [state] = UseWizardContext();
-    const {loadingPage} = state
+    const {loadingPage, lang} = state
+
+    const localize = useLocalizedMessages();
+
+
 
     return (
         loadingPage === 'loading'
@@ -19,7 +25,7 @@ function Layout({children, page}) {
         :(
             <div className="text-secondary">
                 <Head>
-                <title>Password Wizard</title>
+                <title>{localize("passwordWizard")}</title>
                 <link rel="icon" href="/favicon.ico" />
                 </Head> 
                 <Header />

@@ -1,21 +1,21 @@
 export const passwordErr = {
     cantCharacter:{
         status:false,
-        msg:'Min 8 characters'
+        msg:'minEigth'
     },
     symbol:{
         status:false,
-        msg:'At least 1 symbol'
+        msg:'atLeastOneSymbol'
     },
     uppercase:{
         status:false,
-        msg:'At least 1 capital letter'
+        msg:'atLeastOneCapital'
     },
 }
 
 export const confirmPasswordErr = {
     samePassword:{
         status: false,
-        msg: 'Same password'
+        msg: 'samePassword'
     }
 }

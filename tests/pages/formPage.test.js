@@ -21,7 +21,7 @@ test("password checks should be red and next button should be disabled", () => {
 test("min 8 character should change to green if you type 8 characters", () => {
     render(<FormPage />);
     expect(screen.getByText(/min 8 characters/i)).toHaveClass('text-red-500')
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'loremipss');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'loremipss');
     expect(screen.getByText(/min 8 characters/i)).toHaveClass('text-green-500')
     expect(screen.getByRole('button', {  name: /next/i})).toHaveAttribute('disabled')
 }); 
@@ -29,7 +29,7 @@ test("min 8 character should change to green if you type 8 characters", () => {
 test("At least 1 symbols should change to green", () => {
     render(<FormPage />);
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-red-500')
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), '$');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), '$');
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-green-500')
     expect(screen.getByRole('button', {  name: /next/i})).toHaveAttribute('disabled')
 }); 
@@ -37,7 +37,7 @@ test("At least 1 symbols should change to green", () => {
 test("At least 1 capital letter should change to green", () => {
     render(<FormPage />);
     expect(screen.getByText(/at least 1 capital letter/i)).toHaveClass('text-red-500')
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'P');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'P');
     expect(screen.getByText(/at least 1 capital letter/i)).toHaveClass('text-green-500')
     expect(screen.getByRole('button', {  name: /next/i})).toHaveAttribute('disabled')
 }); 
@@ -48,7 +48,7 @@ test("All checks should be green and button still disabled", () => {
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-red-500')
     expect(screen.getByText(/at least 1 capital letter/i)).toHaveClass('text-red-500')
 
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'Nahuel!"');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'Nahuel!"');
 
     expect(screen.getByText(/min 8 characters/i)).toHaveClass('text-green-500')
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-green-500')
@@ -62,7 +62,7 @@ test("All checks should be green and button still disabled", () => {
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-red-500')
     expect(screen.getByText(/at least 1 capital letter/i)).toHaveClass('text-red-500')
 
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'Nahuel!"');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'Nahuel!"');
 
     expect(screen.getByText(/min 8 characters/i)).toHaveClass('text-green-500')
     expect(screen.getByText(/at least 1 symbol/i)).toHaveClass('text-green-500')
@@ -74,7 +74,7 @@ test("typing diferent password 'Same password' should stay red and button disabl
     render(<FormPage />);
     expect(screen.getByText(/same password/i)).toHaveClass('text-red-500')
     
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'Nahuel!"');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'Nahuel!"');
     userEvent.type(screen.getByPlaceholderText(/confirm/i), 'Nahuel"');
 
     expect(screen.getByText(/same password/i)).toHaveClass('text-red-500')
@@ -85,12 +85,9 @@ test("typing same password 'Same password' should change to green and button sho
     render(<FormPage />);
     expect(screen.getByText(/same password/i)).toHaveClass('text-red-500')
     
-    userEvent.type(screen.getByPlaceholderText(  /min 8 \- max 24 \- at least 1 number & 1 uppercase/i), 'Nahuel!"');
+    userEvent.type(screen.getByPlaceholderText(/new password/i), 'Nahuel!"');
     userEvent.type(screen.getByPlaceholderText(/confirm/i), 'Nahuel!"');
 
     expect(screen.getByText(/same password/i)).toHaveClass('text-green-500')
     expect(screen.getByRole('button', {  name: /next/i})).not.toHaveAttribute('disabled')
 }); 
-
-
-

@@ -1,9 +1,13 @@
 import {XCircleIcon, ChevronRightIcon} from '@heroicons/react/solid'
 import Link from 'next/link'
 import {UseWizardContext} from '../../hooks/useWizardContext'
+import useLocalizedMessages from '../../hooks/useLocalizedMessages'
+
 
 function FailCard() {
     const [, dispatch] = UseWizardContext();
+    const localize = useLocalizedMessages();
+
 
     const handleLogInClick = () =>{
         dispatch({ type: 'RESET_STATE' });
@@ -14,13 +18,13 @@ function FailCard() {
                 <XCircleIcon className='h-10 text-red-500'/>
                 <div className=''>
                     <h1 className='font-semibold text-base md:text-xl'>
-                        Something wrong happened
+                    {localize('somethingWrong')}
                     </h1>
                 </div>
             </div>
             <Link href='/' passHref >
                 <div className='flex m-5 justify-end items-center cursor-pointer'>
-                    <a onClick={handleLogInClick} className='text-semibold text-md text-primary'>Back to Wizard</a>
+                    <a onClick={handleLogInClick} className='text-semibold text-md text-primary'>{localize('backToWizard')}</a>
                     <ChevronRightIcon className='h-5 text-primary'/>
                 </div>
             </Link>

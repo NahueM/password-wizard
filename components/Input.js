@@ -1,10 +1,13 @@
 import {useState} from 'react'
 import uniqid from 'uniqid';
-import {CheckIcon, XIcon} from '@heroicons/react/solid'
+import {CheckIcon} from '@heroicons/react/solid'
+import useLocalizedMessages from '../hooks/useLocalizedMessages'
+
 
 function Input({type, label= undefined, onChange, placeHolder, id, classname, value, errMsg={}}) {
-
     const [inputValue, setInputValue] = useState(value)   
+
+    const localize = useLocalizedMessages();
     
     const handleChange= (e) => {
         setInputValue(e.target.value)
@@ -34,7 +37,7 @@ function Input({type, label= undefined, onChange, placeHolder, id, classname, va
                             className={`text-xs flex space-x-4 ${errMsg[err]['status'] ? 'text-green-500' : 'text-red-500' }`} 
                             key={uniqid()}
                         >
-                            {errMsg[err]['msg']}{errMsg[err]['status'] && <CheckIcon className='h-4'/>}
+                            {localize(errMsg[err]['msg'])}{errMsg[err]['status'] && <CheckIcon className='h-4'/>}
                         </div>
                         )
                     }

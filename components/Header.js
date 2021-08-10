@@ -1,12 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {UseWizardContext} from '../hooks/useWizardContext'
+import useLocalizedMessages from '../hooks/useLocalizedMessages'
+
 
 function Header() {
+    const [state, dispatch] = UseWizardContext();
+    const {lang} = state
+
+    const localize = useLocalizedMessages();
+
     return (
         <header className="sticky top-0 z-50  bg-white 
-        shadow-md p-5  md:px-10">
+        shadow-md p-5 md:px-10">
             <div className='max-w-6xl mx-auto px-8 grid grid-cols-2'>
-                <div className='relative flex items-center h-10 cursor-pointer my-auto'>
+                <div className='relative flex items-center h-10 cursor-pointer my-auto pb-4'>
                     <Link href='/' passHref>
                         <Image 
                             src="https://www.openbank.es/assets/logo_topbar/Logo_Web_11.svg"
@@ -17,8 +25,8 @@ function Header() {
                         />
                     </Link>
                 </div>
-                <div className="flex items-center font-quicksand justify-end">
-                    <h1 className="font-quicksand text-secondary text-2xl md:text-3xl">Password Wizard</h1>
+                <div className="flex items-center justify-end">
+                    <h1 className="text-lg text-secondary md:text-3xl inline">{localize(`passwordWizard`)}</h1>
                 </div>
             </div>
         </header>

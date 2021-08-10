@@ -1,4 +1,8 @@
+import useLocalizedMessages from '../hooks/useLocalizedMessages'
+
 function Loading() {
+    const localize = useLocalizedMessages();
+
     let circleCommonClasses = 'h-4 w-4 bg-primary rounded-full';
 
     return (
@@ -8,7 +12,7 @@ function Loading() {
                 <div className={`${circleCommonClasses} mr-1 animate-bounce200`}></div>
                 <div className={`${circleCommonClasses} animate-bounce400`}></div>
             </div>
-            <p>Checking data</p>
+            <p>{localize('checkingData')}</p>
         </div>
     );
 }

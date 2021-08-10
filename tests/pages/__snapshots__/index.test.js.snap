@@ -6,13 +6,13 @@ exports[`Home test Should match snapshot 1`] = `
     class="text-secondary"
   >
     <header
-      class="sticky top-0 z-50  bg-white  shadow-md p-5  md:px-10"
+      class="sticky top-0 z-50  bg-white  shadow-md p-5 md:px-10"
     >
       <div
         class="max-w-6xl mx-auto px-8 grid grid-cols-2"
       >
         <div
-          class="relative flex items-center h-10 cursor-pointer my-auto"
+          class="relative flex items-center h-10 cursor-pointer my-auto pb-4"
         >
           <div
             style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
@@ -28,10 +28,10 @@ exports[`Home test Should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center font-quicksand justify-end"
+          class="flex items-center justify-end"
         >
           <h1
-            class="font-quicksand text-secondary text-2xl md:text-3xl"
+            class="text-lg text-secondary md:text-3xl inline"
           >
             Password Wizard
           </h1>
@@ -58,7 +58,7 @@ exports[`Home test Should match snapshot 1`] = `
         <h2
           class="text-lg font-bold md:text-2xl"
         >
-          Welcome to 
+          Welcome to
           <span
             class="text-primary ml-2"
           >
@@ -68,7 +68,7 @@ exports[`Home test Should match snapshot 1`] = `
         <p
           class="text-sm md:text-lg"
         >
-           We will guide you, through the process of setting your password
+          We will guide you, through the process of setting your password
         </p>
       </div>
     </div>
@@ -81,22 +81,22 @@ exports[`Home test Should match snapshot 1`] = `
         <h3
           class="text-4xl font-semibold pb-5"
         >
-          Just a few steps
+          Just few steps
         </h3>
         <p>
-          For this process we will need
+          For this process we'll need you to
         </p>
         <ul
           class="list-disc m-5"
         >
           <li>
-            Name
+            Write a new password
           </li>
           <li>
-            Last name
+            Verify password
           </li>
           <li>
-            Valid e-mail account
+            Create hint phrase (optional)
           </li>
         </ul>
       </section>

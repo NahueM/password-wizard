@@ -6,13 +6,13 @@ exports[`Should match snapshot 1`] = `
     class="text-secondary"
   >
     <header
-      class="sticky top-0 z-50  bg-white  shadow-md p-5  md:px-10"
+      class="sticky top-0 z-50  bg-white  shadow-md p-5 md:px-10"
     >
       <div
         class="max-w-6xl mx-auto px-8 grid grid-cols-2"
       >
         <div
-          class="relative flex items-center h-10 cursor-pointer my-auto"
+          class="relative flex items-center h-10 cursor-pointer my-auto pb-4"
         >
           <div
             style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
@@ -28,10 +28,10 @@ exports[`Should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center font-quicksand justify-end"
+          class="flex items-center justify-end"
         >
           <h1
-            class="font-quicksand text-secondary text-2xl md:text-3xl"
+            class="text-lg text-secondary md:text-3xl inline"
           >
             Password Wizard
           </h1>
@@ -59,12 +59,12 @@ exports[`Should match snapshot 1`] = `
               class="flex flex-col space-y-2 w-full mb-4 lg:w-5/12"
             >
               <label>
-                New password
+                New Password
               </label>
               <input
                 class="border border-secondary p-2 w-full"
                 id="password"
-                placeholder="Min 8 - Max 24 - at least 1 number & 1 upperCase"
+                placeholder="New Password"
                 type="password"
                 value=""
               />
@@ -73,17 +73,17 @@ exports[`Should match snapshot 1`] = `
                 data-testid="password"
               >
                 <div
-                  class="text-xs text-red-500"
+                  class="text-xs flex space-x-4 text-red-500"
                 >
                   Min 8 characters
                 </div>
                 <div
-                  class="text-xs text-red-500"
+                  class="text-xs flex space-x-4 text-red-500"
                 >
                   At least 1 symbol
                 </div>
                 <div
-                  class="text-xs text-red-500"
+                  class="text-xs flex space-x-4 text-red-500"
                 >
                   At least 1 capital letter
                 </div>
@@ -107,7 +107,7 @@ exports[`Should match snapshot 1`] = `
                 data-testid="confirmPassword"
               >
                 <div
-                  class="text-xs text-red-500"
+                  class="text-xs flex space-x-4 text-red-500"
                 >
                   Same password
                 </div>
@@ -118,18 +118,18 @@ exports[`Should match snapshot 1`] = `
             class="flex flex-col space-y-2 w-full undefined lg:w-5/12"
           >
             <label>
-              Phrase hint
+              Phrase Clue
             </label>
             <input
               class="border border-secondary p-2 w-full"
               id="phrase"
-              placeholder="Will help you remember password"
+              placeholder=" Will help you remember password"
               type="text"
               value=""
             />
           </div>
           <div
-            class="flex flex-row pt-5 space-x-4 md:justify-around"
+            class="flex flex-row w-full pt-5 space-x-4 sm:justify-between"
           >
             <button
               class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-52 text-lg "
@@ -141,7 +141,6 @@ exports[`Should match snapshot 1`] = `
             <button
               class="w-full py-2 px-4 border  border-transparent shadow-sm font-medium rounded-md text-white  bg-primary disabled:bg-gray-400 hover:bg-red-700 sm:w-40 md:w-52 text-lg "
               disabled=""
-              href="/feedBackPage?pssw="
               type="button"
             >
               Next
