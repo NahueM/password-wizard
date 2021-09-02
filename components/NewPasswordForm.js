@@ -40,7 +40,7 @@ function NewPasswordForm() {
         const res = await submitForm(formValues.password)
             .then(response => response)
             .catch(e => e)
-        Router.push({ pathname: '/FeedBackPage', query:{requestStatus: res.status }})
+        Router.push({ pathname: '/feedBackPage', query:{requestStatus: res.status }})
     }
     
     return (
